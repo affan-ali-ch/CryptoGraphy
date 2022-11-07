@@ -21,20 +21,24 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-family: Montserrat;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="caesar.html"  >Caesar Cypher</a>
+                        <a class="nav-link active" aria-current="page" href="caesar.html">Caesar Cipher</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html"  >Shift Cypher</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Shift Cipher</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="Affine.html">Affine Cypher</a>
+                        <a class="nav-link" aria-current="page" href="Affine.html">Affine Cipher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="rsa.html">RSA Cryptosystem</a>
                     </li>
 
+
                 </ul>
-                
+
             </div>
         </div>
     </nav>
@@ -51,56 +55,62 @@
 
         <div class="main-form" style="margin: 10px;">
             <!-- <form> -->
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 1.2rem;">Enter
-                        Text</label>
-                    <textarea class="form-control" id="PlainText" rows="3" name="text"
-                        placeholder="Enter text you want to encrypt"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg" onclick="EncryptShiftCipher()">Encrypt</button>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 1.2rem;">Enter
+                    Text</label>
+                <textarea class="form-control" id="PlainText" rows="3" name="text"
+                    placeholder="Enter text you want to encrypt"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" onclick="EncryptShiftCipher()">Encrypt</button>
             <!-- </form> -->
         </div>
         <hr>
-        <div class="table-responsive" id="style-2">   
+        <div class="table-responsive" id="style-2">
             <div class="table-responsive" id="EncryptTable">
-                <table class="table table-bordered table-responsive table-striped table-hover border-dark"><tbody id="TableWidget"></tbody></table>
+                <table class="table table-bordered table-responsive table-striped table-hover border-dark">
+                    <tbody id="TableWidget"></tbody>
+                </table>
             </div>
         </div>
 
         <br>
 
-        <hr id = "hr1">
+        <hr id="hr1">
 
         <div class="main-output" id="CipherTextOutputContainer">
             <div class="alert alert-success" role="alert">
                 <h4 class="alert-heading" id="CipherTextOutput">Encrypted Text</h4>
             </div>
         </div>
-        <hr id = "hr2">
+        <hr id="hr2">
 
         <div class="sub-heading">
             <h3>Decryption</h3>
         </div>
 
         <div class="main-form" style="margin: 10px;">
-           
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 1.2rem;">Enter
-                        Text</label>
-                    <textarea class="form-control" id="DecryptCipherTextInput" rows="3" name="text"
-                        placeholder="Enter text you want to decrypt"></textarea>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 1.2rem;">Enter
+                    Text</label>
+                <textarea class="form-control" id="DecryptCipherTextInput" rows="3" name="text"
+                    placeholder="Enter text you want to decrypt"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" id="DecryptButton"
+                onclick="DecryptShiftCipher()">Decrypt</button>
+
+
+            <br> <br>
+            <div class="table-responsive" id="style-2">
+                <div class="table-responsive" id="DecryptTable">
+                    <table id="tableDec"
+                        class="table table-responsive table-bordered table-striped table-hover border-dark">
+                        <tbody id="DecryptTableWidget"></tbody>
+                    </table>
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg" id="DecryptButton" onclick="DecryptShiftCipher()">Decrypt</button>
-            
-
-                <br> <br>
-            <div class="table-responsive" id="style-2">           
-            <div class="table-responsive" id = "DecryptTable">
-                <table id="tableDec" class="table table-responsive table-bordered table-striped table-hover border-dark"><tbody id="DecryptTableWidget"></tbody></table>
-            </div>
             </div>
 
-            <br> 
+            <br>
             <div class="main-output" id="PlainTextOutputContainer">
                 <div class="alert alert-success" role="alert">
                     <h4 class="alert-heading" id="ShiftCipherPlainTextOutputLabel">Decrypted Text</h4>
@@ -115,7 +125,7 @@
         <!-- <div class="footerlogo1">
             <img src="/images/uet-lahore-logo-5914237A23-seeklogo.com.png" alt="uet" style="width: 70px;">
         </div> -->
-        <div class="copyRightText" >
+        <div class="copyRightText">
             <p class="textcenter">Students of Session-2021</p>
             <p class="textcenter">Department of Computer Science</p>
             <p class="textcenter">University of Engineering & Technology, Lahore</p>

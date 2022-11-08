@@ -1,0 +1,24 @@
+# Notice: Collection of data on CodeSlat through automated means is
+# prohibited unless you have express written permission from CodeSlat
+# and may only be conducted for the limited purpose contained in said
+# permission.
+
+User-agent: Bingbot
+Sitemap: https://www.codeslat.com/sitemap.xml
+Disallow: /policy.html
+Disallow: /about.html
+Allow: /index.html
+Allow: /Affine.html
+Allow: /caesar.html
+Allow: /rsa.html
+
+User-agent: Googlebot
+Sitemap: https://www.codeslat.com/sitemap.xml
+Disallow: /about.html
+Allow: /index.html
+Allow: /Affine.html
+Allow: /caesar.html
+Allow: /rsa.html
+
+User-agent: *
+Disallow: /

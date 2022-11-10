@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRC5ND6F1T"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SRC5ND6F1T');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KSX5J79');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eager to Learn how Shift Cipher Works? How you could Encrypt and Decrypt your messages using Shift Cipher? CodeSlat is designed to help users solve mathematics problems step-by-step. It includes a variety of features to make the process as easy and painless as possible. ">
+    <meta name="keywords" content="shift cipher,cryptography,encryption,decryption">
+    
+    <meta property="og:image" content="https://www.codeslat.com/1.jpeg" />
+    <meta property="og:title" content="Shift Cipher" />
+    <meta property="og:description" content="Eager to Learn how Shift Cipher Works? How to Encrypt and Decrypt your messages using Shift Cipher? " />
+    <meta property="og:url" content="https://www.codeslat.com/shift.html" />
+    <meta property="og:site_name" content="CodeSlat" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@codeslat">
+    <meta name="twitter:creator" content="@codeslat">
+    <meta name="twitter:title" content="Shift Cipher">
+    <meta name="twitter:description" content="Eager to Learn how Shift Cipher Works? How to Encrypt and Decrypt your messages using Shift Cipher? ">
+    <meta name="twitter:image" content="https://www.codeslat.com/1.jpeg">
+    
+
+    <title>Shift Cipher</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+        
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6872118534290512"
+        crossorigin="anonymous"></script>
+
+    <!-- <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script> -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSX5J79"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+
+    <!-- <amp-ad width="100vw" height="320"
+    type="adsense"
+    data-ad-client="ca-pub-6872118534290512"
+    data-ad-slot="8187305800"
+    data-auto-format="rspv"
+    data-full-width="">
+    <div overflow=""></div>
+    </amp-ad> -->
+
+    <style>
+        .main-Container {
+            /* background-color: #f5f5f5; */
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+            overflow: hidden;
+        }
+        h1{
+            font-family: "Gilroy extrabold";
+        }
+        h2{
+            font-family: "Product Sans";
+            font-weight: 800;
+            font-style: bold;
+        }
+
+        .main-heading {
+            text-align: center;
+            margin-top: 2%;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+        }
+
+        .footerlogo1 {
+            width: 50px;
+            height: 50px;
+            /* margin: 0 auto; */
+            padding: 0;
+        }
+
+        .copyRightText {
+            color: #fff;
+            padding: 10px;
+            font-size: 14px;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .textcenter {
+            text-align: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 0px !important;
+        }
+
+        #style-2::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #style-2::-webkit-scrollbar {
+            width: 12px;
+            height: 7px;
+            background-color: #F5F5F5;
+        }
+
+        #style-2::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #252526;
+        }
+    </style>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html" style="font-family: Gilroy extrabold">CodeSlat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-family: Montserrat;">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="caesar.html">Caesar Cipher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Shift Cipher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="Affine.html">Affine Cipher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="rsa.html">RSA Cryptosystem</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-Container">
+
+        <div class="main-heading">
+            <h1>Shift Cipher</h1>
+        </div>
+
+        <div class="sub-heading">
+            <h2>Encryption</h2>
+        </div>
+
+        <div class="main-form" style="margin: 10px;">
+            <!-- <form> -->
+            <div class="mb-3">
+                <label for="PlainText" class="form-label" style="font-size: 1.2rem;">Enter
+                    Text</label>
+                <textarea class="form-control" id="PlainText" rows="3" name="text"
+                    placeholder="Enter text you want to encrypt"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="ShiftKey" class="form-label" style="font-size: 1.2rem;">Enter
+                    Key</label>
+                <input type="number" class="form-control" id="ShiftKey" name="key">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" onclick="EncryptShiftCipher()">Encrypt</button>
+            <!-- </form> -->
+        </div>
+        <hr>
+        <div class="table-responsive" id="style-2">
+            <div class="table-responsive" id="EncryptTable">
+                <table class="table table-bordered table-responsive table-striped table-hover border-dark">
+                    <tbody id="TableWidget"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <br> <br>
+
+        <hr id="hr1">
+
+        <div class="main-output" id="CipherTextOutputContainer">
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading" id="CipherTextOutput">Encrypted Text</h4>
+            </div>
+        </div>
+        <hr id="hr2">
+
+        <div class="sub-heading">
+            <h2>Decryption</h2>
+        </div>
+
+        <div class="main-form" style="margin: 10px;">
+
+            <div class="mb-3">
+                <label for="DecryptCipherTextInput" class="form-label" style="font-size: 1.2rem;">Enter
+                    Text</label>
+                <textarea class="form-control" id="DecryptCipherTextInput" rows="3" name="text"
+                    placeholder="Enter text you want to decrypt"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="DecryptShiftCipherKey" class="form-label" style="font-size: 1.2rem;">Enter
+                    Key</label>
+                <input type="number" class="form-control" id="DecryptShiftCipherKey" name="key">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" id="DecryptButton"
+                onclick="DecryptShiftCipher()">Decrypt</button>
+
+
+            <br> <br>
+            <div class="table-responsive" id="style-2">
+                <div class="table-responsive" id="DecryptTable">
+                    <table id="tableDec"
+                        class="table table-responsive table-bordered table-striped table-hover border-dark">
+                        <tbody id="DecryptTableWidget"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <br>
+            <div class="main-output" id="PlainTextOutputContainer">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading" id="ShiftCipherPlainTextOutputLabel">Decrypted Text</h4>
+                </div>
+            </div>
+            <br> <br>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <!-- <div class="footerlogo1">
+            <img src="/images/uet-lahore-logo-5914237A23-seeklogo.com.png" alt="uet" style="width: 70px;">
+        </div> -->
+        <div class="copyRightText">
+            <p class="textcenter">Session-2021 Section-C</p>
+            <p class="textcenter">Department of Computer Science</p>
+            <p class="textcenter">University of Engineering & Technology, Lahore</p>
+        </div>
+        <!-- <div class="footerlogo2">
+            <img src="/images/cs-final-logo-ai-with-color-trnasparent.png" alt="cs_dept_uet" style="width: 70px;">
+
+        </div> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+        </script>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

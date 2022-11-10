@@ -7,18 +7,22 @@ User-agent: Bingbot
 Sitemap: https://www.codeslat.com/sitemap.xml
 Disallow: /policy.html
 Disallow: /about.html
+Allow: /
 Allow: /index.html
 Allow: /Affine.html
 Allow: /caesar.html
+Allow: /shift.html
 Allow: /rsa.html
 
 User-agent: Googlebot
 Sitemap: https://www.codeslat.com/sitemap.xml
 Disallow: /about.html
+Allow: /
 Allow: /index.html
 Allow: /Affine.html
 Allow: /caesar.html
+Allow: /shift.html
 Allow: /rsa.html
 
 User-agent: *
-Disallow: /
+Allow: /

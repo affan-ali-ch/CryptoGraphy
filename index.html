@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="theme-color" content="#ffffff">
 
   <title>CodeSlat</title>
 
-
+  <link rel="manifest" href="manifest.json">
   <!-- Favicons -->
   <link href="assets/img/logo.png" rel="icon">
   <link href="assets/img/logo.png" rel="apple-touch-icon">
@@ -25,7 +26,23 @@
 
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/minified.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.js', { scope: '/' })
+        .then(() => {
+            console.info('Developer for Life Service Worker Registered');
+        }, err => console.error("Developer for Life Service Worker registration failed: ", err));
+
+    navigator.serviceWorker
+        .ready
+        .then(() => {
+            console.info('Developer for Life Service Worker Ready');
+        });
+} 
+  </script>
 
 </head>
 
@@ -292,10 +309,10 @@
             </a>
             <p>This Website is designed to help users solve mathematics problems step-by-step. It includes a variety of features to make the process as easy and painless as possible.</p>
             <div class="social-links mt-3">
-              <a href="https://twitter.com/Ch_Affan_Ali?t=ERIUhTj246VfDUkNb5M-yA&s=09" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="https://www.facebook.com/ch.affan.ali/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/ch.affan.ali/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/muhammad-affan-maqsood-027443235" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              <a aria-label="Twitter" href="https://twitter.com/Ch_Affan_Ali?t=ERIUhTj246VfDUkNb5M-yA&s=09" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a aria-label="Facebook" href="https://www.facebook.com/ch.affan.ali/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a aria-label="Instagram" href="https://www.instagram.com/ch.affan.ali/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/in/muhammad-affan-maqsood-027443235" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
 
@@ -352,7 +369,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="sw.js"></script>
+  
 </body>
 
 </html>

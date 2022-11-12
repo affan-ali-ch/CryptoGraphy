@@ -20,13 +20,42 @@ self.addEventListener('install', function(event) {
   });
   
   // On network request
+  // self.addEventListener('fetch', function(event) {
+  //   event.respondWith(
+  //     // Try the cache
+  //     caches.match(event.request).then(function(response) {
+  //       //If response found return it, else fetch again
+  //       return response || fetch(event.request);
+  //     })
+  //   );
+  // });
+
+
   self.addEventListener('fetch', function(event) {
     event.respondWith(
-      // Try the cache
-      caches.match(event.request).then(function(response) {
-        //If response found return it, else fetch again
-        return response || fetch(event.request);
-      })
+          caches.open('sw-cache').then(function(cache) {
+            return cache.match(event.request).then(function(response) {
+          
+                var fetchPromise = fetch(event.request).then(function(networkResponse) {
+                  cache.put(event.request, networkResponse.clone());
+                  return networkResponse;
+                }).catch((err) => {
+                  console.log("Error Fetching Data from Network Shifting to Offline Mode");
+                });
+                  
+                return response || fetchPromise;
+            }).catch((err) => {
+              console.log("Offline Mode");
+            })
+          })
+      
     );
   });
+
+
+  self.addEventListener('message', (event) => {
+    if (event.data === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
+});
   

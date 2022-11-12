@@ -33,13 +33,13 @@
     navigator.serviceWorker
         .register('/sw.js', { scope: '/' })
         .then(() => {
-            console.info('Developer for Life Service Worker Registered');
-        }, err => console.error("Developer for Life Service Worker registration failed: ", err));
+            console.info('CodeSlat Server Worker Registered');
+        }, err => console.error("Service Worker Failed to Register: ", err));
 
     navigator.serviceWorker
         .ready
         .then(() => {
-            console.info('Developer for Life Service Worker Ready');
+            console.info('CodeSlat Server Worker Ready');
         });
 } 
   </script>
@@ -48,6 +48,7 @@
 
 <body>
 
+    
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -371,6 +372,9 @@
   <script src="assets/js/main.js"></script>
   <script src="sw.js"></script>
   
+  
 </body>
 
 </html>
+
+

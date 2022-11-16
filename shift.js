@@ -25,9 +25,23 @@ function shiftCipher(message, key) {
   for (var i = 0; i < message.length; i++) {
     var c = message.charCodeAt(i);
     if (c >= 65 && c <= 90) {
+      if((c - 65 + key) % 26 < 0)
+      {
+        result += String.fromCharCode((c - 65 + key) % 26 + 26 + 65);
+      }
+      else{
       result += String.fromCharCode((c - 65 + key) % 26 + 65);
+
+      }
     } else if (c >= 97 && c <= 122) {
-      result += String.fromCharCode((c - 97 + key) % 26 + 97);
+      if((c - 97 + key) % 26 < 0)
+      {
+        result += String.fromCharCode((c - 97 + key) % 26 + 26 + 97);
+      }
+      else{
+        result += String.fromCharCode((c - 97 + key) % 26 + 97);
+
+      }
     } else {
       result += message.charAt(i);
     }
@@ -40,8 +54,8 @@ function shiftCipher(message, key) {
 function EncryptShiftCipher()
 {
     TableWidget.innerHTML = "";
-    hr1.style.display = 'initial';
-    hr2.style.display = 'initial';
+    hr1.style.display = 'block';
+    hr2.style.display = 'block';
     CipherTextOutputContainer.style.display = 'initial';
     let key = document.getElementById('ShiftKey').value;
     let message = document.getElementById('PlainText').value;
@@ -105,8 +119,20 @@ function EncryptShiftCipher()
     messageAlphabetsArray.forEach((c) => {
             c = c.charCodeAt(0);
             let td4 = document.createElement('td');
-            if (c >= 65 && c <= 90) { td4.innerText = Number((c - 65) + Number(key)) % 26; }
-            else if (c >= 97 && c <= 122) { td4.innerText = Number((c - 97) + Number(key)) % 26; }
+            if (c >= 65 && c <= 90) { 
+              td4.innerText = Number((c - 65) + Number(key)) % 26; 
+              if(Number((c - 65) + Number(key)) % 26 < 0)
+              {
+                td4.innerText = Number((c - 65) + Number(key)) % 26 + 26;
+              }
+            }
+            else if (c >= 97 && c <= 122) { 
+              td4.innerText = Number((c - 97) + Number(key)) % 26; 
+              if(Number((c - 97) + Number(key)) % 26 < 0)
+              {
+                td4.innerText = Number((c - 97) + Number(key)) % 26 + 26;
+              }
+            }
             else { td4.innerText = c; }
             tr4.appendChild(td4);
     });

@@ -1,105 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRC5ND6F1T"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affine Cipher | CodeSlat</title>
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
 
-    gtag('config', 'G-SRC5ND6F1T');
-    </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KSX5J79');</script>
-    <!-- End Google Tag Manager -->
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Affine Cipher</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6872118534290512"
-     crossorigin="anonymous"></script>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
 </head>
-
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSX5J79"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="font-family: Gilroy extrabold">EncodeX</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-family: Montserrat;">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="caesar.html">Caesar Cipher</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Shift Cipher</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Affine.html">Affine Cipher</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="rsa.html">RSA Cryptosystem</a>
-                    </li>
+    <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-                </ul>
-            </div>
-        </div>
-    </nav>
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span>CodeSlat</span>
+      </a>
 
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="/index.html#hero">Home</a></li>
+          <li><a class="nav-link" href="/about.html">About</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#values">Features</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#team">Team</a></li>
+          
+          
+          <li><a class="nav-link" href="/services.html">Services</a></li>
+          
+          <li><a class="nav-link scrollto" href="/index.html#contact">Contact</a></li>
+          <li><a class="getstarted" href="/services.html">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <br><br><br>
+
+  <section>
     <div class="main-Container">
 
         <div class="main-heading">
-            <h1>Affine Cipher</h1>
+            <h1 class="text-center"><strong>Affine Cipher</strong></h1>
 
         </div>
 
         <div class="sub-heading">
-            <h3>Encryption</h3>
+            <h3><strong>Encryption</strong></h3>
         </div>
 
         <div class="main-form" style="margin: 10px;">
             <!-- <form action="" method="POST"> -->
             <div class="mb-3">
-                <label for="EncryptPlainMessage" class="form-label" style="font-size: 1.2rem;">Enter
-                    Text</label>
-                <textarea class="form-control" id="EncryptPlainMessage" rows="3" name="text"
+                <label for="EncryptPlainMessage" class="form-label" style="font-size: 1.2rem;"><strong>Enter Text</strong></label>
+                <textarea class="form-control" id="EncryptPlainMessage" rows="3" name="EncryptPlainMessage"
                     placeholder="Enter text you want to encrypt"></textarea>
             </div>
             <div class="mb-3">
-                <label for="EncryptKey1" class="form-label" style="font-size: 1.2rem;">Enter
-                    Key A</label>
-                <input type="number" class="form-control" id="EncryptKey1" name="key1">
+                <label for="EncryptKey1" class="form-label" style="font-size: 1.2rem;"><strong>Enter Key A</strong></label>
+                <input type="number" class="form-control" id="EncryptKey1" name="EncryptKey1">
             </div>
             <div class="mb-3">
-                <label for="EncryptKey2" class="form-label" style="font-size: 1.2rem;">Enter
-                    Key B</label>
-                <input type="number" class="form-control" id="EncryptKey2" name="key2">
+                <label for="EncryptKey2" class="form-label" style="font-size: 1.2rem;"><strong>Enter Key B</strong></label>
+                <input type="number" class="form-control" id="EncryptKey2" name="EncryptKey2">
             </div>
-            <button type="submit" class="btn btn-primary btn-lg" onclick="EncryptAffineCipher()">Encrypt</button>
+            <button type="submit" style="font-family: 'Nunito', sans-serif;" class="btn btn-primary btn-lg" onclick="EncryptAffineCipher()">Encrypt</button>
             <!-- </form> -->
         </div>
-        <hr id="hr1">
+        <hr id="hr1" style="display:none">
 
         <div class="table-responsive" id="style-2">
             <div class="table-responsive">
@@ -109,44 +98,41 @@
             </div>
         </div>
 
-        <hr id="hr2">
+        <hr id="hr2" style="display:none">
 
 
-        <div class="main-output" id="EncryptedTextDiv">
+        <div class="main-output" id="EncryptedTextDiv" style="display:none">
             <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading" id="CipherTextOutputLabel">Encrypted Text</h4>
+                <h3 class="alert-heading" id="CipherTextOutputLabel"><strong>Encrypted Text</strong></h3>
             </div>
         </div>
         <hr>
 
         <div class="sub-heading">
-            <h3>Decryption</h3>
+            <h3><strong>Decryption</strong></h3>
         </div>
 
         <div class="main-form" style="margin: 10px;">
             <!-- <form action="" method="POST"> -->
             <div class="mb-3">
-                <label for="DecryptCipherTextInput" class="form-label" style="font-size: 1.2rem;">Enter
-                    Text</label>
-                <textarea class="form-control" id="DecryptCipherTextInput" rows="3" name="text"
+                <label for="DecryptCipherTextInput" class="form-label" style="font-size: 1.2rem;"><strong>Enter Text</strong></label>
+                <textarea class="form-control" id="DecryptCipherTextInput" rows="3" name="DecryptCipherTextInput"
                     placeholder="Enter text you want to decrypt"></textarea>
             </div>
             <div class="mb-3">
-                <label for="DecryptKey1" class="form-label" style="font-size: 1.2rem;">Enter
-                    Key A</label>
+                <label for="DecryptKey1" class="form-label" style="font-size: 1.2rem;"><strong>Enter Key A</strong></label>
                 <input type="number" class="form-control" id="DecryptKey1" name="key3">
             </div>
             <div class="mb-3">
-                <label for="DecryptKey2" class="form-label" style="font-size: 1.2rem;">Enter
-                    Key B</label>
+                <label for="DecryptKey2" class="form-label" style="font-size: 1.2rem;"><strong>Enter Key B</strong></label>
                 <input type="number" class="form-control" id="DecryptKey2" name="key4">
             </div>
-            <button type="submit" class="btn btn-primary btn-lg" id="DecryptButton"
+            <button type="submit" style="font-family: 'Nunito', sans-serif;" class="btn btn-primary btn-lg" id="DecryptButton"
                 onclick="DecryptAffineCipherButton()">Decrypt</button>
             <!-- </form> -->
 
 
-            <div class="table-responsive" id="style-2">
+            <div class="table-responsive" id="style-2" >
                 <div class="table-responsive">
                     <table class="table table-bordered table-responsive table-striped table-hover border-dark">
                         <tbody></tbody>
@@ -154,7 +140,7 @@
                 </div>
             </div>
 
-            <div class="main-output" id="DecryptedTextDiv">
+            <div class="main-output" id="DecryptedTextDiv" style="display:none">
                 <div class="alert alert-success" role="alert">
                     <h4 class="alert-heading" id="PlainTextOutputLabel">Decrypted Text</h4>
                 </div>
@@ -162,26 +148,83 @@
 
         </div>
     </div>
+  </section>
 
-    <!-- footer -->
-    <div class="footer">
-        <div class="copyRightText">
-            <p class="textcenter">Session-2021 Section-C</p>
-            <p class="textcenter">Department of Computer Science</p>
-            <p class="textcenter">University of Engineering & Technology, Lahore</p>
+     <!-- ======= Footer ======= -->
+     <footer id="footer" class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row gy-4">
+              <div class="col-lg-5 col-md-12 footer-info">
+                <a href="index.html" class="logo d-flex align-items-center">
+                  <img src="assets/img/logo.png" alt="">
+                  <span>CodeSlat</span>
+                </a>
+                <p>This Website is designed to help users solve mathematics problems step-by-step. It includes a variety of features to make the process as easy and painless as possible.</p>
+                <div class="social-links mt-3">
+                  <a href="https://twitter.com/Ch_Affan_Ali?t=ERIUhTj246VfDUkNb5M-yA&s=09" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
+                  <a href="https://www.facebook.com/ch.affan.ali/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/ch.affan.ali/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/muhammad-affan-maqsood-027443235" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+    
+              
+              
+              <div class="col-lg-2 col-6 footer-links ">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <a href="/index.html">Home</a></li>
+                  <li><i class="bi bi-chevron-right"></i> <a href="/about.html">About us</a></li>
+                  <li><i class="bi bi-chevron-right"></i> <a href="/services.html">Services</a></li>
+                  <li><i class="bi bi-chevron-right"></i> <a href="/terms.html">Terms of service</a></li>
+                  <li><i class="bi bi-chevron-right"></i> <a href="/privacy.html">Privacy policy</a></li>
+                </ul>
+              </div>
+    
+    
+              <div class="col-lg-5 col-md-12 footer-contact text-center text-md-start">
+                <h4>Contact Us</h4>
+                <p>
+                  Department of Computer Science  <br>
+                  Univerity of Engineering & Technology, Lahore<br>
+                  Pakistan <br><br>
+                  <strong>Phone:</strong> <a href="tel:+923062051545">+92 306 2051545</a><br>
+                  <strong>Email:</strong> <a href="mailto:support@codeslat.com">support@codeslat.com</a><br>
+                </p>
+    
+              </div>
+    
+            </div>
+          </div>
         </div>
-    </div>
+    
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>CodeSlat</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed with ❤️ in Pakistan
+          </div>
+        </div>
+      </footer><!-- End Footer -->
+    
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-        </script>
-
-    <script src="./affine.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="affine.js"></script>
 
 </body>
-
 </html>

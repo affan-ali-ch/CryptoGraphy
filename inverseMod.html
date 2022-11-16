@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher | CodeSlat</title>
+    <title>Inverse Mod | CodeSlat</title>
   <!-- Favicons -->
   <link href="assets/img/logo.png" rel="icon">
   <link href="assets/img/logo.png" rel="apple-touch-icon">
@@ -22,9 +22,25 @@
 
 
   <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <link href="assets/css/style.css" rel="stylesheet">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.js', { scope: '/' })
+        .then(() => {
+            console.info('CodeSlat Server Worker Registered');
+        }, err => console.error("Service Worker Failed to Register: ", err));
+
+    navigator.serviceWorker
+        .ready
+        .then(() => {
+            console.info('CodeSlat Server Worker Ready');
+        });
+} 
+  </script>
 
 </head>
 <body>
@@ -63,85 +79,53 @@
     <div class="main-Container">
 
         <div class="main-heading">
-            <h1 style="color: #012970;" class="text-center"><strong>Caesar Cipher</strong></h1>
-        </div>
+            <h1 class="text-center"><strong>Modular Multiplicative Inverse</strong></h1>
 
-        <div class="sub-heading">
-            <h3 style="color: #012970;"><strong>Encryption</strong></h3>
         </div>
 
         <div class="main-form" style="margin: 10px;">
-            <!-- <form> -->
+            <!-- <form action="" method="POST"> -->
             <div class="mb-3">
-                <label for="text" class="form-label" style="font-size: 1.2rem; color: #012970;"><strong>Enter Text</strong></label>
-                <textarea class="form-control" id="PlainText" rows="3" name="text"
-                    placeholder="Enter text you want to encrypt"></textarea>
+                <label for="IntegerValueInput" class="form-label" style="font-size: 1.2rem;"><strong>Integer</strong></label>
+                
+                <input type="number" class="form-control" id="IntegerValueInput" name="IntegerValueInput">
+                
             </div>
-            <button type="submit" style="font-family: 'Nunito', sans-serif;" class="btn btn-primary btn-lg" onclick="EncryptShiftCipher()">Encrypt</button>
+            <div class="mb-3">
+                <label for="ModuloValueInput" class="form-label" style="font-size: 1.2rem;"><strong>Modulo</strong></label>
+                <input type="number" class="form-control" id="ModuloValueInput" name="ModuloValueInput">
+            </div>
+
+            <button type="submit" style="font-family: 'Nunito', sans-serif;" class="btn btn-primary btn-lg" onclick="CalculateInverseMod()">Calculate</button>
             <!-- </form> -->
         </div>
-        <hr>
+        <hr id="hr1" style="display:none">
+
         <div class="table-responsive" id="style-2">
-            <div class="table-responsive" id="EncryptTable">
+            <div class="table-responsive">
                 <table class="table table-bordered table-responsive table-striped table-hover border-dark">
-                    <tbody id="TableWidget"></tbody>
+                    <tbody id="TableBody"></tbody>
                 </table>
             </div>
         </div>
 
-        <br>
-
-        <hr id="hr1" style="display:none">
-
-        <div class="main-output" id="CipherTextOutputContainer" style="display:none">
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading" id="CipherTextOutput">Encrypted Text</h4>
-            </div>
-        </div>
         <hr id="hr2" style="display:none">
 
-        <div class="sub-heading">
-            <h3 style="color: #012970;"><strong>Decryption</strong></h3>
+
+        <div class="main-output" id="OutputContainer" style="display:none">
+            <div class="alert alert-success" role="alert">
+                <h3 class="alert-heading" id="OutputLabel"><strong>Output</strong></h3>
+            </div>
         </div>
+        <hr>
 
-        <div class="main-form" style="margin: 10px;">
+       
 
-            <div class="mb-3">
-                <label for="ciphertext" class="form-label" style="font-size: 1.2rem; color: #012970;"><strong>Enter Text</strong></label>
-                <textarea class="form-control" id="DecryptCipherTextInput" rows="3" name="ciphertext"
-                    placeholder="Enter text you want to decrypt"></textarea>
-            </div>
-            <button type="submit" style="font-family: 'Nunito', sans-serif;" class="btn btn-primary btn-lg" id="DecryptButton"
-                onclick="DecryptShiftCipher()">Decrypt</button>
-
-
-            <br> <br>
-            <div class="table-responsive" id="style-2">
-                <div class="table-responsive" id="DecryptTable">
-                    <table id="tableDec"
-                        class="table table-responsive table-bordered table-striped table-hover border-dark">
-                        <tbody id="DecryptTableWidget"></tbody>
-                    </table>
-                </div>
-            </div>
-
-            <br>
-            <div class="main-output" id="PlainTextOutputContainer" style="display:none">
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading" id="ShiftCipherPlainTextOutputLabel">Decrypted Text</h4>
-                </div>
-            </div>
-            <br> 
-        </div>
     </div>
   </section>
 
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-
-
-
+     <!-- ======= Footer ======= -->
+     <footer id="footer" class="footer">
         <div class="footer-top">
           <div class="container">
             <div class="row gy-4">
@@ -214,7 +198,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="caesar.js"></script>
+  <script src="inverseMod.js"></script>
 
 </body>
 </html>

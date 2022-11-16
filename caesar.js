@@ -40,8 +40,8 @@ function shiftCipher(message, key) {
 function EncryptShiftCipher()
 {
     TableWidget.innerHTML = "";
-    hr1.style.display = 'initial';
-    hr2.style.display = 'initial';
+    hr1.style.display = 'block';
+    hr2.style.display = 'block';
     CipherTextOutputContainer.style.display = 'initial';
     let key = 3;
     let message = document.getElementById('PlainText').value;

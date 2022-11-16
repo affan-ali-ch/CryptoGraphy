@@ -26,9 +26,15 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+label,
+button,
+textarea,
+table {
   font-family: "Nunito", sans-serif;
+  color: #012970;
 }
+
 
 /*--------------------------------------------------------------
 # Sections

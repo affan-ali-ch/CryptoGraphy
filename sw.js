@@ -1,20 +1,21 @@
 // On install - caching the application shell
+const filesToCache = ['/index.html', '/services.html', '/rsa.html', '/shift.html','/Affine.html', '/caesar.html', '/terms.html', '/privacy.html', '/about.html']
 self.addEventListener('install', function(event) {
     event.waitUntil(
       caches.open('sw-cache').then(function(cache) {
         // cache any static files that make up the application shell
-        cache.add('services.html');
+        // cache.add('services.html');
 
-        cache.add('rsa.html');
-        cache.add('shift.html');
-        cache.add('caesar.html');
-        cache.add('Affine.html');
+        // cache.add('rsa.html');
+        // cache.add('shift.html');
+        // cache.add('caesar.html');
+        // cache.add('Affine.html');
 
-        cache.add('terms.html');
-        cache.add('privacy.html');
-        cache.add('about.html');
+        // cache.add('terms.html');
+        // cache.add('privacy.html');
+        // cache.add('about.html');
 
-        return cache.add('index.html');
+        return cache.addAll(filesToCache);
       })
     );
   });
@@ -37,7 +38,12 @@ self.addEventListener('install', function(event) {
             return cache.match(event.request).then(function(response) {
           
                 var fetchPromise = fetch(event.request).then(function(networkResponse) {
-                  cache.put(event.request, networkResponse.clone());
+          
+                    cache.put(event.request, networkResponse.clone()).catch(function() {
+                        // ignore errors
+                      });
+                  
+                  
                   return networkResponse;
                 }).catch((err) => {
                   console.log("Error Fetching Data from Network Shifting to Offline Mode");

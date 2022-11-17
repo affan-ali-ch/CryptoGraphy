@@ -14,7 +14,9 @@
 }
 
 
-
+#equations{
+    font-size: larger;
+}
 
 #style-2::-webkit-scrollbar-track
 {

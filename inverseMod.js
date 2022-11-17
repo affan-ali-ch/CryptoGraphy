@@ -5,13 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var int = urlParams.get('int');
     var mod = urlParams.get('mod');
 
+    
     // set int and mod
     document.getElementById("IntegerValueInput").value = int;
     document.getElementById("ModuloValueInput").value = mod;
 
+    if(int == null && mod == null)
+    {
+        return;
+    }
+
     // calculate inverse mod
     CalculateInverseMod();
-    
+
 });
 
 
@@ -72,6 +78,7 @@ function CalculateInverseMod()
     OutputContainer.style.display = 'initial';
 
     let OutputLabel = document.getElementById("OutputLabel");
+
 
 
     if(a == "" || m == "")

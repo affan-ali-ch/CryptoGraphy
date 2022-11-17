@@ -132,19 +132,52 @@
             <!-- </form> -->
 
 
-            <div class="table-responsive" id="style-2" >
-                <div class="table-responsive">
-                    <table class="table table-bordered table-responsive table-striped table-hover border-dark">
-                        <tbody></tbody>
-                    </table>
-                </div>
-            </div>
+            <br><br>
 
             <div class="main-output" id="DecryptedTextDiv" style="display:none">
                 <div class="alert alert-success" role="alert">
                     <h4 class="alert-heading" id="PlainTextOutputLabel">Decrypted Text</h4>
                 </div>
             </div>
+
+              <br>
+              
+
+            
+
+            <div class="container" id="equations" style="display:none"> 
+              <div class="sub-heading" id="SolutionLabel" style="display:none">
+                <h4><strong>Solution</strong></h4>
+            </div>
+              <br>
+              <label>C ≡ AP+B (mod 26)</label>
+              <br>
+              <label>C-B ≡ AP (mod 26)</label>
+              <br>
+              <label>A<sup>-1</sup>(C-B) ≡ A<sup>-1</sup>AP (mod 26)</label>
+              <br>
+              <label>A<sup>-1</sup>(C-B) ≡ P (mod 26)</label>
+              <br>
+              <label>P ≡ A<sup>-1</sup>(C-B)(mod 26)</label>
+              <br>
+              <label id="EndLabel"></label>
+              <br>
+              <label id="DeadLabel"></label>
+              <span>&nbsp; &nbsp; &nbsp;</span>
+              <a id="InverseSolutionLink" target="_blank" class="getstarted"><u>See Solution</u></a>
+              <br>
+              <label id="FinalLabel"></label>
+
+            </div>
+
+            <br><br>
+            <div class="table-responsive" id="style-2" >
+              <div class="table-responsive">
+                  <table class="table table-bordered table-responsive table-striped table-hover border-dark">
+                      <tbody id="DecryptTableBody"></tbody>
+                  </table>
+              </div>
+          </div>
 
         </div>
     </div>

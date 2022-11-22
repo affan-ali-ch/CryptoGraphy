@@ -1,0 +1,47 @@
+#switch{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  
+  #ToggleLabel {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 74px;
+    height: 38px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    border: 2px solid #012970;
+  }
+  
+  #ToggleLabel:after {
+    content: '';
+    position: absolute;
+    top: 2.1px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #012970;
+    background: #fff;
+    border-radius: 60px;
+    transition: 0.3s;
+  }
+  
+  #switch:checked + #ToggleLabel {
+    background: #012970;
+
+  }
+  
+  #switch:checked + #ToggleLabel:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+    border: 1px solid #ffffff;
+  }
+  
+  #ToggleLabel:active:after {
+    width: 65px;
+  }
+  

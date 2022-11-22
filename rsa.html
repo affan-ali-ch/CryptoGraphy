@@ -24,6 +24,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/assets/css/toggle.css">
 
 </head>
 <body>
@@ -74,22 +75,42 @@
             <!-- <form action="" method="POST"> -->
             <div class="mb-3">
                 <label for="EncryptPlainMessage" class="form-label" style="font-size: 1.2rem;"><strong>Enter Text</strong></label>
-                <textarea class="form-control" id="EncryptPlainMessage" rows="3" name="text"
+                <textarea class="form-control" id="EncryptPlainMessage" rows="3" name="EncryptPlainMessage"
                     placeholder="Enter text you want to encrypt"></textarea>
             </div>
-            <div class="mb-3">
-                <label for="EncryptKeyP" class="form-label" style="font-size: 1.2rem;"><strong>Enter Key P</strong></label>
-                <input type="number" class="form-control" id="EncryptKeyP" name="key1">
+
+            <div class="col-xs-1" align="center" style="height: 100px!important; ">
+              <!-- <label">P,Q</label> -->
+              <input type="checkbox" id="switch" /><label for="switch" id="ToggleLabel">Toggle</label>
+              <!-- <label>N</label> -->
+            </div>
+
+
+            <div class="mb-3" id="PrimesContainer" style="display:none">
+              <div class="mb-3">
+                <label for="EncryptPrimeP" class="form-label" style="font-size: 1.2rem;"><strong>Enter Prime P</strong></label>
+                <input type="number" class="form-control" id="EncryptPrimeP" name="EncryptPrimeP">
             </div>
             <div class="mb-3">
-                <label for="EncryptKeyQ" class="form-label" style="font-size: 1.2rem;"><strong>Enter Key Q</strong></label>
-                <input type="number" class="form-control" id="EncryptKeyQ" name="key2">
+                <label for="EncryptPrimeQ" class="form-label" style="font-size: 1.2rem;"><strong>Enter Prime Q</strong></label>
+                <input type="number" class="form-control" id="EncryptPrimeQ" name="EncryptPrimeQ">
             </div>
+            </div>
+           
+            
+            
+
+            <div class="mb-3" id="ModulusNContainer">
+              <label for="ModulusN" class="form-label" style="font-size: 1.2rem;"><strong>Enter Modulus N</strong></label>
+              <input type="number" class="form-control" id="ModulusN" name="ModulusN">
+          </div>
+
+
             <div class="mb-3">
-                <label for="EncryptKeyE" class="form-label" style="font-size: 1.2rem;"><strong>Enter Key E</strong></label>
-                <input type="number" class="form-control" id="EncryptKeyE" name="key3">
+                <label for="EncryptExponentE" class="form-label" style="font-size: 1.2rem;"><strong>Enter Exponent E</strong></label>
+                <input type="number" class="form-control" id="EncryptExponentE" name="EncryptExponentE">
             </div>
-            <button type="submit" style="font-family: 'Nunito', sans-serif;" class="btn btn-primary btn-lg" onclick="">Encrypt</button>
+            <button type="submit" style="font-family: 'Nunito', sans-serif;" class="btn btn-primary btn-lg" id="EncryptButton">Encrypt</button>
             <!-- </form> -->
         </div>
         <hr id="hr1" style="display:none">
@@ -105,9 +126,9 @@
         <hr id="hr2" style="display:none">
 
 
-        <div class="main-output" id="EncryptedTextDiv" style="display:none">
+        <div class="main-output" id="EncryptCipherMessageContainer" style="display:none">
             <div class="alert alert-success" role="alert">
-                <h3 class="alert-heading" id="RSATextOutputLabel"><strong>Encrypted Text</strong></h3>
+                <h3 class="alert-heading" id="EncryptCipherMessageLabel"><strong>Encrypted Text</strong></h3>
             </div>
         </div>
         <hr>
@@ -235,7 +256,7 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
-<!-- <script src="shift.js"></script> -->
+<script src="rsa.js"></script>
 
 </body>
 </html>
